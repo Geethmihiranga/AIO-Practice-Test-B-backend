@@ -30,6 +30,7 @@ class UpdateClientRequest extends FormRequest
                 Rule::unique('clients', 'phone')->ignore($clientId),
             ],
             'address' => ['sometimes', 'required', 'string', 'max:5000'],
+            'company_employee_count' => ['sometimes', 'required', 'integer', 'min:0'],
             'project_budget' => [
                 'sometimes',
                 'required',
